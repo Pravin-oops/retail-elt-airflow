@@ -38,8 +38,8 @@ default_args = {
 with DAG(
     'retail_etl_pipeline',
     default_args=default_args,
-    description='V4: Retail ETL orchestrated by Airflow',
-    schedule_interval='@daily',
+    description='Retail ETL orchestrated by Airflow',
+    schedule_interval=None, #manual trigger only
     catchup=False,
     tags=['retail', 'oracle', 'v4'],
 ) as dag:
