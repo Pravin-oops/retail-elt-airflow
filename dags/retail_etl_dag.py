@@ -48,7 +48,7 @@ with DAG(
     # This runs the same SQL script used in Jenkins to Drop/Recreate tables
     t0_cleanup = BashOperator(
         task_id='reset_schema',
-        bash_command='python /opt/airflow/scripts/data_truncate.py /opt/airflow/sql/init_oracle/05_ddl_tables.sql',
+        bash_command='python /opt/airflow/scripts/sql_runner.py /opt/airflow/sql/init_oracle/05_ddl_tables.sql',
     )
 
     # TASK 1: Generate Data
